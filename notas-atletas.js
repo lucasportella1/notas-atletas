@@ -26,15 +26,10 @@ function obterEstatistica() {
    })
    return soma / (atletas[i].notas.length - 2)
   }    
-  function obterNomeCompleto() {
-   console.log("Atleta: " + atletas[i].nome) 
+  console.log("Atleta: " + atletas[i].nome) 
+  console.log("Notas Obtidas: "+ atletas[i].notas.sort())
+  console.log("Nota Válida: " + calcularMedia())
+  console.log(" ")
   }
-  function obterNotas() {
-   console.log("Notas Obtidas: "+ atletas[i].notas.sort())
-  }
-  function obterMedia() {
-    console.log("Nota Válida: " + calcularMedia() + <br>)
-  }
- }
 }
 console.log(obterEstatistica())
