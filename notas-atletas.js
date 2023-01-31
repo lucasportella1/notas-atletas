@@ -17,19 +17,19 @@ let atletas = [
  }
 ];
 
-function obterEstatistica(){
-for (let i = 0; i < atletas.length; i++) {
-  console.log("Atleta: " + atletas[i].nome)
-  console.log("Notas Obtidas: "+ atletas[i].notas.sort())
-  function obterMedia () {
-    let soma = 0
-    atletas[i].notas.sort().slice(1,4).forEach(function(nota){
+function obterEstatistica() {
+ for (let i = 0; i < atletas.length; i++) { 
+  function calcularMedia () {
+   let soma = 0
+   atletas[i].notas.sort().slice(1,4).forEach(function(nota){
       soma = soma + nota
-    })
-    return soma / (atletas[i].notas.length - 2)
-}    
-    console.log("Nota Válida: " + obterMedia())
-    console.log(" ")
-}
+   })
+   return soma / (atletas[i].notas.length - 2)
+  }    
+  console.log("Atleta: " + atletas[i].nome) 
+  console.log("Notas Obtidas: "+ atletas[i].notas.sort())
+  console.log("Nota Válida: " + calcularMedia())
+  console.log(" ")
+  }
 }
 console.log(obterEstatistica())
