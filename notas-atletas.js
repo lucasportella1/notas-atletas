@@ -1,15 +1,19 @@
-function obterEstatistica(atletas) {
- for (let i = 0; i < atletas.length; i++) { 
-  function calcularMedia () {
+function calcularMedia (atleta) {
    let soma = 0
-   atletas[i].notas.sort().slice(1,4).forEach(function(nota){
-      soma = soma + nota
-   })
-   return soma / (atletas[i].notas.length - 2)
-  }    
+   atleta.notas
+    .sort()
+    .slice(1,4)
+    .forEach(function(nota){
+      soma += nota
+    })
+   return soma / (atleta.notas.length - 2)
+  }
+    
+function obterEstatistica(atletas) {
+ for (let i = 0; i < atletas.length; i++) {     
   console.log("Atleta: " + atletas[i].nome) 
   console.log("Notas Obtidas: "+ atletas[i].notas.sort())
-  console.log("Nota Válida: " + calcularMedia())
+  console.log("Nota Válida: " + calcularMedia(atletas[i]))
   console.log(" ")
   }
 }
@@ -33,4 +37,4 @@ let atletas = [
  }
 ];
 
-console.log(obterEstatistica(atletas))
+obterEstatistica(atletas)
